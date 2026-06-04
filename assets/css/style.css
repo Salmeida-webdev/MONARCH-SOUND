@@ -225,7 +225,7 @@ textarea:focus-visible {
 }
 
 /* =========================
-   MOBILE MENU
+   MENU MOBILE
 ========================= */
 
 .mobile-menu {
@@ -358,7 +358,7 @@ textarea:focus-visible {
 .vertical-label {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  color: var(--text-light);
+  color: #d8d0c5;
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -418,7 +418,7 @@ h1 {
 .hero__text {
   max-width: 660px;
   margin: 0;
-  color: var(--text-light);
+  color: #d8d0c5;
   font-size: clamp(1rem, 1.2vw, 1.18rem);
   line-height: 1.8;
 }
@@ -471,7 +471,7 @@ h1 {
 }
 
 /* =========================
-   SECTIONS
+   SEÇÕES
 ========================= */
 
 .section {
@@ -542,7 +542,7 @@ h1 {
 .contact p,
 .experience-row p {
   max-width: 670px;
-  color: var(--text-light);
+  color: #d8d0c5;
   font-size: clamp(1rem, 1.15vw, 1.12rem);
   line-height: 1.8;
 }
@@ -551,7 +551,7 @@ h1 {
 .section--light .manifesto p,
 .section--light .studio p,
 .section--light .contact p {
-  color: var(--text-dark-soft);
+  color: #5b534c;
 }
 
 /* =========================
@@ -591,7 +591,7 @@ h1 {
 .manifesto__points span {
   padding: 10px 14px;
   border: 1px solid var(--line-dark);
-  color: var(--text-dark-soft);
+  color: #5b534c;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -599,7 +599,7 @@ h1 {
 }
 
 /* =========================
-   ARTISTS
+   ARTISTAS
 ========================= */
 
 .artists__grid {
@@ -666,7 +666,7 @@ h1 {
 
 .artist-card__content p {
   max-width: 430px;
-  color: var(--text-light);
+  color: #d8d0c5;
   line-height: 1.7;
 }
 
@@ -696,7 +696,7 @@ h1 {
 }
 
 /* =========================
-   RELEASES
+   LANÇAMENTOS
 ========================= */
 
 .releases {
@@ -811,7 +811,7 @@ h1 {
 
 .service-list article p {
   margin: var(--s-2) 0 0;
-  color: var(--text-dark-soft);
+  color: #5b534c;
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -886,11 +886,11 @@ h1 {
 }
 
 .experience-row p {
-  color: var(--text-light);
+  color: #d8d0c5;
 }
 
 /* =========================
-   CONTACT
+   CONTATO
 ========================= */
 
 .contact__grid {
@@ -931,7 +931,7 @@ h1 {
 .contact-channels span {
   display: grid;
   gap: 2px;
-  color: var(--text-dark-soft);
+  color: #5b534c;
   line-height: 1.45;
 }
 
@@ -1000,7 +1000,7 @@ h1 {
 .form-note {
   min-height: 24px;
   margin: var(--s-2) 0 0;
-  color: var(--text-dark-soft);
+  color: #5b534c;
   line-height: 1.6;
 }
 
@@ -1012,7 +1012,46 @@ h1 {
 }
 
 /* =========================
-   FINAL CTA
+   REFINOS DE CONTRASTE
+========================= */
+
+.section--light p,
+.section--light .section-heading p,
+.section--light .manifesto p,
+.section--light .studio p,
+.section--light .contact p,
+.contact-channels span,
+.form-note {
+  color: #5b534c;
+  opacity: 1;
+}
+
+.manifesto__points span,
+.contact-form label {
+  color: #3f3f3f;
+}
+
+.contact-channels strong,
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  color: #1a1a1a;
+}
+
+.site-footer p,
+.site-footer a,
+.site-footer span {
+  color: #cfc5b8;
+}
+
+.section--dark p,
+.experience-row p,
+.artist-card__content p {
+  color: #d5c9b8;
+}
+
+/* =========================
+   CTA FINAL
 ========================= */
 
 .final-cta {
@@ -1063,7 +1102,7 @@ h1 {
 }
 
 /* =========================
-   FLOATING WHATSAPP
+   WHATSAPP FLUTUANTE
 ========================= */
 
 .floating-whatsapp {
@@ -1072,8 +1111,8 @@ h1 {
   bottom: clamp(18px, 3vw, 32px);
   z-index: 980;
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1082,8 +1121,8 @@ h1 {
 }
 
 .floating-whatsapp img {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   border: 0;
   background: transparent;
@@ -1091,7 +1130,7 @@ h1 {
 }
 
 /* =========================
-   FOOTER
+   RODAPÉ
 ========================= */
 
 .site-footer {
@@ -1167,7 +1206,7 @@ h1 {
 
 .footer__legal-text p {
   margin-bottom: 0;
-  color: var(--text-light);
+  color: #d8d0c5;
 }
 
 .footer__bottom {
@@ -1196,7 +1235,7 @@ h1 {
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVO
 ========================= */
 
 @media (max-width: 1120px) {
@@ -1344,15 +1383,15 @@ h1 {
   }
 
   .floating-whatsapp {
-    right: 18px;
-    bottom: 18px;
-    width: 150px;
-    height: 150px;
+    right: 16px;
+    bottom: 16px;
+    width: 110px;
+    height: 110px;
   }
 
   .floating-whatsapp img {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
   }
 }
 
@@ -1371,13 +1410,13 @@ h1 {
   }
 
   .floating-whatsapp {
-    width: 118px;
-    height: 118px;
+    width: 96px;
+    height: 96px;
   }
 
   .floating-whatsapp img {
-    width: 118px;
-    height: 118px;
+    width: 96px;
+    height: 96px;
   }
 }
 
@@ -1398,118 +1437,5 @@ h1 {
   .hero__media img {
     animation: none;
     transform: none;
-  }
-}
-/* ==================================================
-   MONARCH SOUND
-   CORREÇÕES FINAIS DE CONTRASTE + WHATSAPP FLOATING
-================================================== */
-
-/* ---------- CONTRASTE DOS TEXTOS ---------- */
-
-.manifesto p,
-.studio p,
-.contact p,
-.section--light p,
-.section-heading p,
-.contact-copy p,
-.contact-intro p,
-.contact-description p {
-  color: #5b534c !important;
-  opacity: 1 !important;
-}
-
-.manifesto__points span,
-.manifesto-tags span,
-.studio-tags span {
-  color: #4d453d !important;
-  opacity: 1 !important;
-}
-
-.contact-channels span,
-.contact-card span,
-.contact-card p {
-  color: #4d453d !important;
-  opacity: 1 !important;
-}
-
-.contact-form label {
-  color: #2f2f2f !important;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  color: #1a1a1a !important;
-  opacity: 1 !important;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #7a7168 !important;
-  opacity: 1;
-}
-
-.form-note {
-  color: #4d453d !important;
-}
-
-.section-subtitle,
-.section-description,
-.section-lead,
-.hero-description {
-  color: #5b534c !important;
-  opacity: 1 !important;
-}
-
-/* ---------- ACESSIBILIDADE PREMIUM ---------- */
-
-.section-subtitle,
-.section-description,
-.contact-copy,
-.contact-intro,
-.contact-description,
-.form-note {
-  line-height: 1.8;
-}
-
-/* ---------- WHATSAPP FLUTUANTE ---------- */
-/* reduzido pela metade em relação aos 300px */
-
-.floating-whatsapp {
-  width: 150px !important;
-  height: 150px !important;
-  right: 24px !important;
-  bottom: 24px !important;
-}
-
-.floating-whatsapp img {
-  width: 150px !important;
-  height: 150px !important;
-  object-fit: contain;
-}
-
-/* ---------- RESPONSIVO ---------- */
-
-@media (max-width: 768px) {
-  .floating-whatsapp {
-    width: 110px !important;
-    height: 110px !important;
-    right: 16px !important;
-    bottom: 16px !important;
-  }
-
-  .floating-whatsapp img {
-    width: 110px !important;
-    height: 110px !important;
-  }
-
-  .manifesto p,
-  .studio p,
-  .contact p,
-  .section-description,
-  .contact-copy {
-    color: #5b534c !important;
-    opacity: 1 !important;
   }
 }

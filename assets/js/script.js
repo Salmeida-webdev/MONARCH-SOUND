@@ -7,8 +7,12 @@ const contactForm = document.querySelector("[data-contact-form]");
 const submitBtn = document.querySelector("[data-submit-btn]");
 const formNote = document.querySelector("[data-form-note]");
 
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+
 /* ==========================
-   HEADER SCROLL STATE
+   ESTADO DO HEADER NO SCROLL
 ========================== */
 
 const updateHeaderState = () => {
@@ -19,10 +23,12 @@ const updateHeaderState = () => {
 
 updateHeaderState();
 
-window.addEventListener("scroll", updateHeaderState, { passive: true });
+window.addEventListener("scroll", updateHeaderState, {
+  passive: true,
+});
 
 /* ==========================
-   MOBILE MENU
+   MENU MOBILE
 ========================== */
 
 const closeMobileMenu = () => {
@@ -31,10 +37,8 @@ const closeMobileMenu = () => {
   mobileMenu.classList.remove("is-open");
 
   menuToggle.setAttribute("aria-expanded", "false");
-
   mobileMenu.setAttribute("aria-hidden", "true");
-
-  menuToggle.setAttribute("aria-label", "Open menu");
+  menuToggle.setAttribute("aria-label", "Abrir menu");
 
   menuIcon.src = "assets/icons/ui/menu.svg";
 
@@ -49,7 +53,10 @@ if (menuToggle && mobileMenu && menuIcon) {
 
     mobileMenu.setAttribute("aria-hidden", String(!isOpen));
 
-    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Fechar menu" : "Abrir menu",
+    );
 
     menuIcon.src = isOpen
       ? "assets/icons/ui/close.svg"
@@ -76,12 +83,45 @@ if (menuToggle && mobileMenu && menuIcon) {
 }
 
 /* ==========================
-   SCROLL REVEAL
+   NAVEGAÇÃO SUAVE
+========================== */
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+
+    if (!targetId || targetId === "#") return;
+
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    target.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start",
+    });
+
+    closeMobileMenu();
+  });
+});
+
+/* ==========================
+   REVEAL AO ROLAR
 ========================== */
 
 const revealItems = document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window) {
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 0.035, 0.28)}s`;
+});
+
+if (prefersReducedMotion) {
+  revealItems.forEach((item) => {
+    item.classList.add("is-visible");
+  });
+} else if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -108,91 +148,92 @@ if ("IntersectionObserver" in window) {
 }
 
 /* ==========================
-   STAGGER REVEAL
+   FORMULÁRIO ASSÍNCRONO
 ========================== */
 
-revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${index * 0.05}s`;
-});
+const encodeFormData = (formData) => new URLSearchParams(formData).toString();
 
-/* ==========================
-   CONTACT FORM
-   ASYNC UX
-========================== */
+const setFormState = (state, message) => {
+  if (!contactForm || !submitBtn || !formNote) return;
+
+  contactForm.classList.remove("is-sending", "is-sent", "is-error");
+
+  if (state) {
+    contactForm.classList.add(state);
+  }
+
+  formNote.textContent = message || "";
+};
 
 if (contactForm && submitBtn && formNote) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     if (!contactForm.checkValidity()) {
-      formNote.textContent = "Please complete all required fields.";
+      setFormState("is-error", "Preencha todos os campos obrigatórios.");
+
+      contactForm.reportValidity();
 
       return;
     }
 
+    const formData = new FormData(contactForm);
+
     submitBtn.disabled = true;
+    submitBtn.textContent = "Processando...";
 
-    submitBtn.textContent = "Sending...";
-
-    formNote.textContent = "";
+    setFormState("is-sending", "");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: encodeFormData(formData),
+      });
 
       contactForm.reset();
 
-      submitBtn.textContent = "Inquiry Sent";
+      submitBtn.textContent = "Solicitação Enviada";
 
-      formNote.textContent =
-        "Thank you. MONARCH SOUND will review your inquiry and respond soon.";
+      setFormState(
+        "is-sent",
+        "Obrigado. Solicitações selecionadas recebem retorno em até 72 horas.",
+      );
 
-      setTimeout(() => {
+      window.setTimeout(() => {
         submitBtn.disabled = false;
+        submitBtn.textContent = "Enviar Solicitação";
 
-        submitBtn.textContent = "Send Inquiry";
-      }, 2200);
+        contactForm.classList.remove("is-sent");
+      }, 2400);
     } catch (error) {
       submitBtn.disabled = false;
 
-      submitBtn.textContent = "Send Inquiry";
+      submitBtn.textContent = "Enviar Solicitação";
 
-      formNote.textContent = "An unexpected error occurred. Please try again.";
+      setFormState(
+        "is-error",
+        "Não foi possível enviar a mensagem. Entre em contato pelo WhatsApp ou e-mail.",
+      );
     }
   });
 }
 
 /* ==========================
-   SMOOTH ANCHOR NAVIGATION
+   ACESSIBILIDADE
 ========================== */
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const target = document.querySelector(link.getAttribute("href"));
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Tab") return;
 
-    if (!target) return;
-
-    event.preventDefault();
-
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
+  document.body.classList.add("is-keyboard-user");
 });
 
-/* ==========================
-   ACCESSIBILITY
-========================== */
-
-document
-  .querySelectorAll("button, a, input, select, textarea")
-  .forEach((element) => {
-    element.addEventListener("keyup", (event) => {
-      if (event.key === "Enter") {
-        element.click?.();
-      }
-    });
-  });
+document.addEventListener("mousedown", () => {
+  document.body.classList.remove("is-keyboard-user");
+});
 
 /* ==========================
    PERFORMANCE
