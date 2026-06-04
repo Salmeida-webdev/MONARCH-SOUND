@@ -8,7 +8,7 @@
 
     <meta
       name="description"
-      content="A MONARCH SOUND é uma gravadora premium e estúdio criativo de áudio que desenvolve artistas, lançamentos, identidades sonoras e cultura criativa."
+      content="A MONARCH SOUND é uma gravadora premium e estúdio criativo de áudio especializada em produção musical, identidade sonora, mixagem, masterização e desenvolvimento artístico."
     />
     <meta
       name="keywords"
@@ -57,7 +57,7 @@
     />
     <meta
       property="og:description"
-      content="Uma gravadora premium e estúdio criativo que desenvolve artistas, lançamentos e identidades sonoras com precisão editorial."
+      content="Gravadora premium e estúdio criativo de áudio para produção musical, identidade sonora, mixagem, masterização e desenvolvimento artístico."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://monarchsoundstudio.netlify.app/" />
@@ -73,7 +73,7 @@
     />
     <meta
       name="twitter:description"
-      content="Uma gravadora premium e estúdio criativo que desenvolve artistas, lançamentos e identidades sonoras com precisão editorial."
+      content="Gravadora premium e estúdio criativo de áudio para produção musical, identidade sonora, mixagem, masterização e desenvolvimento artístico."
     />
     <meta
       name="twitter:image"
@@ -86,13 +86,14 @@
         "@graph": [
           {
             "@type": ["Organization", "MusicGroup", "LocalBusiness"],
+            "additionalType": "https://schema.org/AudioObject",
             "@id": "https://monarchsoundstudio.netlify.app/#organization",
             "name": "MONARCH SOUND",
             "alternateName": "Som da Monarca",
             "url": "https://monarchsoundstudio.netlify.app/",
             "logo": "https://monarchsoundstudio.netlify.app/assets/logos/monarch-primary-logo.png",
             "image": "https://monarchsoundstudio.netlify.app/assets/backgrounds/monarch-hero-bg.webp",
-            "description": "Gravadora premium e estúdio criativo de áudio que desenvolve artistas, lançamentos, identidades sonoras e cultura criativa.",
+            "description": "Gravadora premium e estúdio criativo de áudio especializada em produção musical, desenvolvimento artístico, identidade sonora, mixagem e masterização.",
             "email": "hello@monarchsound.studio",
             "telephone": "+5583998326680",
             "priceRange": "$$$",
@@ -152,7 +153,7 @@
         <a href="#contact">Contato</a>
       </nav>
 
-      <a class="header-cta" href="#contact">Agendar Sessão</a>
+      <a class="header-cta" href="#contact">Agendar Conversa Criativa</a>
 
       <button
         class="menu-toggle"
@@ -216,18 +217,50 @@
 
             <h1 id="hero-title">MONARCH SOUND</h1>
 
-            <p class="hero__lead">Som Curado Para a Próxima Era Criativa.</p>
-
-            <p class="hero__text">
-              Uma gravadora e estúdio criativo que desenvolve artistas,
-              lançamentos e identidades sonoras com precisão editorial.
+            <p class="hero__lead">
+              Produção musical, identidade sonora e direção criativa para
+              artistas que querem deixar marca.
             </p>
 
-            <div class="hero__actions" aria-label="Primary actions">
-              <a class="btn btn--primary" href="#artists">Conhecer Artistas</a>
-              <a class="btn btn--outline" href="#contact">Agendar Sessão</a>
+            <p class="hero__text">
+              Da gravação ao lançamento, criamos experiências sonoras completas
+              para artistas, marcas culturais e projetos autorais.
+            </p>
+
+            <div class="hero__actions" aria-label="Ações principais">
+              <a class="btn btn--primary" href="#artists">Explorar Projetos</a>
+              <a class="btn btn--outline" href="#contact"
+                >Agendar Conversa Criativa</a
+              >
             </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        class="brand-metrics"
+        aria-label="Números institucionais da MONARCH SOUND"
+      >
+        <div class="container metrics__grid">
+          <article class="metric-card reveal">
+            <span>+50</span>
+            <p>produções finalizadas</p>
+          </article>
+
+          <article class="metric-card reveal">
+            <span>+120</span>
+            <p>faixas mixadas e masterizadas</p>
+          </article>
+
+          <article class="metric-card reveal">
+            <span>+15</span>
+            <p>artistas desenvolvidos</p>
+          </article>
+
+          <article class="metric-card reveal">
+            <span>MS001–MS004</span>
+            <p>catálogo editorial autoral</p>
+          </article>
         </div>
       </section>
 
@@ -241,24 +274,24 @@
             <span class="section-label">02 / Manifesto</span>
 
             <h2 id="manifesto-title">
-              Nós não produzimos apenas faixas. Moldamos memória cultural por
-              meio do som.
+              Não entregamos apenas faixas. Construímos identidade sonora,
+              presença cultural e percepção de valor.
             </h2>
 
             <p>
-              A MONARCH SOUND conecta produção, desenvolvimento artístico,
-              direção sonora e cultura criativa em um ecossistema refinado para
-              artistas independentes, labels e marcas criativas.
+              A MONARCH SOUND conecta produção musical, desenvolvimento
+              artístico, mixagem, masterização e direção criativa em um processo
+              pensado para transformar som em marca.
             </p>
 
             <p class="manifesto__statement">
-              O som se transforma em identidade quando emoção, técnica e
-              presença cultural caminham como uma só linguagem.
+              Cada projeto é conduzido com curadoria, técnica e narrativa para
+              que a música tenha presença, contexto e acabamento profissional.
             </p>
 
             <div
               class="manifesto__points"
-              aria-label="MONARCH SOUND creative capabilities"
+              aria-label="Capacidades criativas da MONARCH SOUND"
             >
               <span>Produção</span>
               <span>Desenvolvimento Artístico</span>
@@ -457,8 +490,13 @@
                   width="18"
                   height="18"
                 />
-                Ouvir Prévia
+                Produzir Prévia
               </button>
+              <ul class="release-meta" aria-label="Detalhes do lançamento">
+                <li>Formato Digital</li>
+                <li>Master Streaming</li>
+                <li>Catálogo MONARCH</li>
+              </ul>
             </div>
           </article>
 
@@ -484,8 +522,13 @@
                   width="18"
                   height="18"
                 />
-                Ouvir Prévia
+                Produzir Prévia
               </button>
+              <ul class="release-meta" aria-label="Detalhes do lançamento">
+                <li>Formato Digital</li>
+                <li>Master Streaming</li>
+                <li>Catálogo MONARCH</li>
+              </ul>
             </div>
           </article>
 
@@ -511,8 +554,13 @@
                   width="18"
                   height="18"
                 />
-                Ouvir Prévia
+                Produzir Prévia
               </button>
+              <ul class="release-meta" aria-label="Detalhes do lançamento">
+                <li>Formato Digital</li>
+                <li>Master Streaming</li>
+                <li>Catálogo MONARCH</li>
+              </ul>
             </div>
           </article>
 
@@ -538,8 +586,13 @@
                   width="18"
                   height="18"
                 />
-                Ouvir Prévia
+                Produzir Prévia
               </button>
+              <ul class="release-meta" aria-label="Detalhes do lançamento">
+                <li>Formato Digital</li>
+                <li>Master Streaming</li>
+                <li>Catálogo MONARCH</li>
+              </ul>
             </div>
           </article>
         </div>
@@ -552,16 +605,17 @@
       >
         <div class="container studio__grid">
           <div class="studio__copy reveal">
-            <span class="section-label">05 / Produção & Engineering</span>
+            <span class="section-label">05 / Produção & Engenharia</span>
 
             <h2 id="studio-title">
-              Da sala de gravação ao master final, cada detalhe carrega
-              intenção.
+              Um processo completo para transformar ideias em lançamentos
+              prontos para o mercado.
             </h2>
 
             <p>
-              Produção musical, gravação, mixagem, masterização, sound design e
-              direção criativa desenvolvidos em um ambiente de áudio refinado.
+              Atuamos da pré-produção ao master final, combinando direção
+              artística, engenharia de áudio e acabamento premium para
+              streaming, campanhas e lançamentos independentes.
             </p>
 
             <div class="service-list">
@@ -586,7 +640,7 @@
                   width="38"
                   height="38"
                 />
-                <h3>Hybrid Produção</h3>
+                <h3>Produção Híbrida</h3>
                 <p>
                   Caráter analógico, precisão digital e arranjos pensados para
                   lançamento.
@@ -618,6 +672,46 @@
                 <p>
                   Paletas sonoras autorais para artistas, labels, campanhas e
                   marcas culturais.
+                </p>
+              </article>
+            </div>
+
+            <div
+              class="studio-workflow"
+              aria-label="Workflow de produção MONARCH SOUND"
+            >
+              <article>
+                <span>01</span>
+                <h3>Diagnóstico Sonoro</h3>
+                <p>
+                  Mapeamento de referências, identidade artística e objetivo do
+                  lançamento.
+                </p>
+              </article>
+
+              <article>
+                <span>02</span>
+                <h3>Produção</h3>
+                <p>
+                  Construção de arranjo, textura, atmosfera e direção estética
+                  da faixa.
+                </p>
+              </article>
+
+              <article>
+                <span>03</span>
+                <h3>Mixagem</h3>
+                <p>
+                  Equilíbrio técnico, profundidade, clareza e impacto emocional.
+                </p>
+              </article>
+
+              <article>
+                <span>04</span>
+                <h3>Masterização</h3>
+                <p>
+                  Finalização para streaming, distribuição digital e
+                  apresentação profissional.
                 </p>
               </article>
             </div>
@@ -669,12 +763,13 @@
           <span class="section-label">06 / Cultura Criativa</span>
 
           <h2 id="experience-title">
-            Um ambiente global para escuta profunda, colaboração e descoberta.
+            Uma cultura criativa construída para descobrir, produzir, conectar e
+            lançar.
           </h2>
 
           <p>
-            Sessões, momentos editoriais e encontros criativos pensados para
-            artistas que tratam o som como linguagem cultural.
+            A experiência MONARCH SOUND organiza cada etapa criativa com foco em
+            direção, escuta, colaboração e entrega final.
           </p>
         </div>
 
@@ -693,11 +788,10 @@
 
             <div>
               <span>Descobrir</span>
-              <h3>Conversas criativas globais.</h3>
+              <h3>Diagnóstico artístico e sonoro.</h3>
               <p>
-                Reunimos artistas, produtores e colaboradores em ambientes onde
-                a cultura se move por meio do som, da conversa e da identidade
-                visual.
+                Entendemos o universo do artista, referências, objetivo do
+                lançamento e posicionamento antes de iniciar qualquer produção.
               </p>
             </div>
           </article>
@@ -715,12 +809,11 @@
             </figure>
 
             <div>
-              <span>Ouvir</span>
-              <h3>Música apresentada com contexto.</h3>
+              <span>Produzir</span>
+              <h3>Produção com direção e intenção.</h3>
               <p>
-                Momentos de escuta profunda pensados para atenção focada,
-                ambientes refinados e públicos que valorizam atmosfera acima do
-                ruído.
+                A produção acontece com foco em identidade, textura, arranjo e
+                coerência estética para que cada faixa tenha intenção clara.
               </p>
             </div>
           </article>
@@ -738,11 +831,11 @@
             </figure>
 
             <div>
-              <span>Criar</span>
-              <h3>Atmosfera depois da meia-noite.</h3>
+              <span>Lançar</span>
+              <h3>Entrega pronta para lançamento.</h3>
               <p>
-                Um espaço para ideias que surgem quando a sala está silenciosa,
-                o som é honesto e a direção criativa se torna clara.
+                Finalizamos o material com mixagem, masterização e orientação de
+                apresentação para uma entrega mais forte e profissional.
               </p>
             </div>
           </article>
@@ -759,13 +852,13 @@
             <span class="section-label">07 / Contato</span>
 
             <h2 id="contact-title">
-              Inicie uma conversa criativa com propósito.
+              Agende uma conversa para avaliar seu projeto.
             </h2>
 
             <p>
-              Para produção, lançamentos, desenvolvimento artístico,
-              masterização, direção sonora e colaborações criativas seletivas.
-              As solicitações são avaliadas manualmente.
+              Conte sobre seu projeto, objetivo artístico ou necessidade sonora.
+              Avaliamos cada solicitação manualmente para entender escopo,
+              direção e alinhamento criativo.
             </p>
 
             <div class="contact-channels">
@@ -909,7 +1002,7 @@
       <section class="final-cta" aria-labelledby="final-cta-title">
         <img
           src="assets/experience/atmosphere-scene.webp"
-          alt="Sophisticated night creative atmosphere with city lights and premium interior."
+          alt="Atmosfera criativa noturna sofisticada com luzes urbanas e interior premium."
           width="1920"
           height="1100"
           loading="lazy"
@@ -922,19 +1015,19 @@
           <span class="section-label">08 / Colaboração</span>
 
           <h2 id="final-cta-title">
-            Todo projeto começa com uma conversa. Vamos construir o que
-            permanece.
+            Sua música precisa soar profissional. Sua marca precisa ser
+            lembrada.
           </h2>
 
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#contact">Iniciar Colaboração</a>
+            <a class="btn btn--primary" href="#contact">Solicitar Avaliação</a>
             <a
               class="btn btn--outline"
               href="https://wa.me/5583998326680"
               target="_blank"
               rel="noopener"
             >
-              Falar com o Estúdio
+              Falar no WhatsApp
             </a>
           </div>
         </div>
@@ -967,13 +1060,13 @@
           />
 
           <p>
-            Label independente, direção criativa e produção sonora para
-            artistas, marcas e projetos culturais construídos em torno de
-            identidade, cultura e presença.
+            Gravadora criativa e estúdio de produção musical para artistas,
+            marcas culturais e projetos que buscam identidade sonora, acabamento
+            técnico e presença de mercado.
           </p>
         </div>
 
-        <nav class="footer__nav" aria-label="Footer navigation">
+        <nav class="footer__nav" aria-label="Navegação do rodapé">
           <h3>Navegação</h3>
           <a href="#home">Início</a>
           <a href="#manifesto">Manifesto</a>
@@ -1013,8 +1106,8 @@
 
         <div class="footer__legal">
           <h3>Conformidade</h3>
-          <a href="#privacy">Política de Privacidade</a>
-          <a href="#terms">Termos de Uso</a>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
           <span>Solicitações selecionadas são avaliadas manualmente.</span>
         </div>
       </div>

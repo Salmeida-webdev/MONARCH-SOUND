@@ -50,7 +50,6 @@ if (menuToggle && mobileMenu && menuIcon) {
     const isOpen = mobileMenu.classList.toggle("is-open");
 
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-
     mobileMenu.setAttribute("aria-hidden", String(!isOpen));
 
     menuToggle.setAttribute(
@@ -204,6 +203,7 @@ if (contactForm && submitBtn && formNote) {
 
       window.setTimeout(() => {
         submitBtn.disabled = false;
+
         submitBtn.textContent = "Enviar Solicitação";
 
         contactForm.classList.remove("is-sent");

@@ -1235,6 +1235,163 @@ h1 {
 }
 
 /* =========================
+   MÉTRICAS INSTITUCIONAIS
+========================= */
+
+.brand-metrics {
+  position: relative;
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  background: var(--bg-2);
+  border-block: 1px solid var(--line-light);
+}
+
+.metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-3);
+}
+
+.metric-card {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line-light);
+  background: rgba(255, 255, 255, 0.025);
+  contain: layout paint;
+}
+
+.metric-card span {
+  display: block;
+  margin-bottom: var(--s-2);
+  color: var(--accent);
+  font-family: "Space Grotesk Local", var(--font-heading);
+  font-size: clamp(2rem, 3vw + 0.5rem, 4.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.metric-card p {
+  margin: 0;
+  color: #d5c9b8;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* =========================
+   METADADOS DOS LANÇAMENTOS
+========================= */
+
+.release-meta {
+  display: grid;
+  gap: 8px;
+  margin: var(--s-3) 0 0;
+  padding: var(--s-3) 0 0;
+  border-top: 1px solid var(--line-light);
+  list-style: none;
+}
+
+.release-meta li {
+  color: #cfc5b8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* =========================
+   WORKFLOW DO ESTÚDIO
+========================= */
+
+.studio-workflow {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+
+.studio-workflow article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-3);
+  padding: var(--s-3) 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.studio-workflow article:last-child {
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.studio-workflow span {
+  color: var(--accent);
+  font-family: "Space Grotesk Local", var(--font-heading);
+  font-size: clamp(1.4rem, 2vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.studio-workflow h3 {
+  margin: 0;
+  color: var(--bg);
+  font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem);
+  letter-spacing: -0.05em;
+}
+
+.studio-workflow p {
+  grid-column: 2;
+  margin: 6px 0 0;
+  color: #5b534c;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   REFINO FINAL DE COPY/CTA
+========================= */
+
+.hero__text {
+  max-width: 760px;
+}
+
+.contact-form.is-error {
+  border-color: rgba(198, 93, 58, 0.65);
+}
+
+.is-keyboard-user :focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(198, 93, 58, 0.44),
+    0 0 0 7px rgba(243, 238, 231, 0.14);
+}
+
+@media (max-width: 1120px) {
+  .metrics__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .brand-metrics {
+    padding-block: clamp(3rem, 12vw, 5rem);
+  }
+
+  .metrics__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    padding: var(--s-3);
+  }
+
+  .studio-workflow article {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-workflow p {
+    grid-column: auto;
+  }
+}
+
+/* =========================
    RESPONSIVO
 ========================= */
 
