@@ -25,6 +25,21 @@
 
     <link
       rel="preload"
+      href="assets/fonts/inter-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/space-grotesk-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      rel="preload"
       as="image"
       href="assets/backgrounds/monarch-hero-bg.webp"
     />
@@ -54,21 +69,47 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "MONARCH SOUND",
-        "url": "https://monarchsound.studio/",
-        "logo": "https://monarchsound.studio/assets/logos/monarch-primary-logo.png",
-        "email": "hello@monarchsound.studio",
-        "telephone": "+5583998326680",
-        "sameAs": ["https://www.instagram.com/monarchsound.studio"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Los Angeles / London / São Paulo"
-        },
-        "founder": {
-          "@type": "Person",
-          "name": "Segundo Almeida"
-        }
+        "@graph": [
+          {
+            "@type": ["Organization", "MusicGroup", "LocalBusiness"],
+            "@id": "https://monarchsoundstudio.netlify.app/#organization",
+            "name": "MONARCH SOUND",
+            "alternateName": "Som da Monarca",
+            "url": "https://monarchsoundstudio.netlify.app/",
+            "logo": "https://monarchsoundstudio.netlify.app/assets/logos/monarch-primary-logo.png",
+            "image": "https://monarchsoundstudio.netlify.app/assets/backgrounds/monarch-hero-bg.webp",
+            "description": "Premium international music label and creative audio studio shaping artists, releases, sonic identities and creative culture.",
+            "email": "hello@monarchsound.studio",
+            "telephone": "+5583998326680",
+            "priceRange": "$$$",
+            "sameAs": ["https://www.instagram.com/monarchsound.studio"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Los Angeles / London / São Paulo"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Segundo Almeida"
+            },
+            "knowsAbout": [
+              "Music Production",
+              "Mixing",
+              "Mastering",
+              "Artist Development",
+              "Sonic Identity",
+              "Creative Direction"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://monarchsoundstudio.netlify.app/#website",
+            "url": "https://monarchsoundstudio.netlify.app/",
+            "name": "MONARCH SOUND",
+            "publisher": {
+              "@id": "https://monarchsoundstudio.netlify.app/#organization"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -186,13 +227,19 @@
             <span class="section-label">02 / Manifesto</span>
 
             <h2 id="manifesto-title">
-              We build sound as identity, emotion and cultural presence.
+              We do not simply produce tracks. We shape cultural memory through
+              sound.
             </h2>
 
             <p>
               MONARCH SOUND connects production, artist development, sonic
               direction and creative culture into one refined ecosystem for
               independent artists, labels and global creative brands.
+            </p>
+
+            <p class="manifesto__statement">
+              Sound becomes identity when emotion, technique and cultural
+              presence move as one.
             </p>
 
             <div
@@ -387,7 +434,7 @@
             </div>
 
             <div class="release-card__body">
-              <span>Compilation Vol. 1 / 2026</span>
+              <span>MS001 / Compilation Vol. 1 / 2026</span>
               <h3>Echoes</h3>
               <button type="button" class="listen-btn">
                 <img
@@ -414,7 +461,7 @@
             </div>
 
             <div class="release-card__body">
-              <span>Compilation Vol. 2 / 2026</span>
+              <span>MS002 / Compilation Vol. 2 / 2026</span>
               <h3>Horizon</h3>
               <button type="button" class="listen-btn">
                 <img
@@ -441,7 +488,7 @@
             </div>
 
             <div class="release-card__body">
-              <span>Ambient / Downtempo / 2026</span>
+              <span>MS003 / Ambient / Downtempo / 2026</span>
               <h3>Endless Horizons</h3>
               <button type="button" class="listen-btn">
                 <img
@@ -468,7 +515,7 @@
             </div>
 
             <div class="release-card__body">
-              <span>Experimental / Ambient / 2026</span>
+              <span>MS004 / Experimental / Ambient / 2026</span>
               <h3>Organic Frequencies</h3>
               <button type="button" class="listen-btn">
                 <img
@@ -513,6 +560,10 @@
                   height="38"
                 />
                 <h3>Recording Sessions</h3>
+                <p>
+                  Vocal, instrumental and editorial capture with controlled
+                  atmosphere.
+                </p>
               </article>
 
               <article>
@@ -522,7 +573,11 @@
                   width="38"
                   height="38"
                 />
-                <h3>Production</h3>
+                <h3>Hybrid Production</h3>
+                <p>
+                  Analog character, digital precision and release-focused
+                  arrangement.
+                </p>
               </article>
 
               <article>
@@ -533,6 +588,10 @@
                   height="38"
                 />
                 <h3>Mixing & Mastering</h3>
+                <p>
+                  Streaming, digital distribution and vinyl-minded final
+                  translation.
+                </p>
               </article>
 
               <article>
@@ -542,7 +601,11 @@
                   width="38"
                   height="38"
                 />
-                <h3>Sound Design</h3>
+                <h3>Sonic Identity</h3>
+                <p>
+                  Signature palettes for artists, labels, campaigns and cultural
+                  brands.
+                </p>
               </article>
             </div>
           </div>
@@ -616,7 +679,7 @@
             </figure>
 
             <div>
-              <span>Community</span>
+              <span>Discover</span>
               <h3>Global creative conversations.</h3>
               <p>
                 We bring artists, producers and collaborators into rooms where
@@ -638,7 +701,7 @@
             </figure>
 
             <div>
-              <span>Listening Sessions</span>
+              <span>Listen</span>
               <h3>Music presented with context.</h3>
               <p>
                 Deep listening moments designed for focused attention, refined
@@ -660,7 +723,7 @@
             </figure>
 
             <div>
-              <span>Late Night Sessions</span>
+              <span>Create</span>
               <h3>Atmosphere after hours.</h3>
               <p>
                 A space for ideas that arrive when the room is quiet, the sound
@@ -684,7 +747,8 @@
 
             <p>
               For production, releases, artist development, mastering, sonic
-              direction and creative collaboration.
+              direction and selective creative collaboration. Applications are
+              reviewed manually.
             </p>
 
             <div class="contact-channels">
@@ -755,7 +819,19 @@
             </div>
           </div>
 
-          <form class="contact-form reveal" data-contact-form>
+          <form
+            class="contact-form reveal"
+            name="monarch-contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            data-contact-form
+          >
+            <input type="hidden" name="form-name" value="monarch-contact" />
+            <p class="hidden-field">
+              <label>Do not fill this out: <input name="bot-field" /></label>
+            </p>
+
             <div class="form-row">
               <label for="name">Name</label>
               <input
@@ -825,7 +901,7 @@
           <span class="section-label">08 / Collaboration</span>
 
           <h2 id="final-cta-title">
-            Let’s Shape the Sound of What Comes Next.
+            Every project starts with a conversation. Let’s build what remains.
           </h2>
 
           <div class="hero__actions">
@@ -871,8 +947,9 @@
           />
 
           <p>
-            Creative Music Label & Audio Studio shaping identity, culture and
-            presence through sound.
+            Independent label, creative direction and sonic production for
+            artists, brands and cultural projects built around identity, culture
+            and presence.
           </p>
         </div>
 
@@ -886,6 +963,15 @@
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </nav>
+
+        <div class="footer__services">
+          <h3>Services</h3>
+          <a href="#studio">Recording</a>
+          <a href="#studio">Production</a>
+          <a href="#studio">Mixing</a>
+          <a href="#studio">Mastering</a>
+          <a href="#studio">Creative Direction</a>
+        </div>
 
         <div class="footer__contact">
           <h3>Contact</h3>
@@ -904,6 +990,32 @@
           </a>
           <span>Los Angeles / London / São Paulo</span>
         </div>
+
+        <div class="footer__legal">
+          <h3>Compliance</h3>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Use</a>
+          <span>Selected project inquiries are reviewed manually.</span>
+        </div>
+      </div>
+
+      <div class="container footer__legal-text" aria-label="Legal information">
+        <details id="privacy">
+          <summary>Privacy Policy</summary>
+          <p>
+            MONARCH SOUND uses submitted contact information only to respond to
+            inquiries and collaboration requests. This portfolio project does
+            not process payments or store sensitive data.
+          </p>
+        </details>
+
+        <details id="terms">
+          <summary>Terms of Use</summary>
+          <p>
+            All names, releases and studio information presented on this website
+            are fictional and created for portfolio demonstration purposes.
+          </p>
+        </details>
       </div>
 
       <div class="container footer__bottom">
